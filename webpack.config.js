@@ -1,5 +1,9 @@
 const path = require('path')
 
+// 兼容旧版的 css 不需要 可以选择关闭
+const StylelintPlugin = require('stylelint-webpack-plugin')
+const STYLELINT_SWITCH = false
+
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
@@ -47,8 +51,18 @@ module.exports = {
             limit: 10 * 1024   
           }
         }
-      }
+      },
+      // less 样式处理
+      {
+        test: /\.less$/i,
+        use: ['style-loader', 'css-loader', 'less-loader']
+      },
     ]
   },
   // devtool: 'source-map'
+  plugins: [
+    ...STYLELINT_SWITCH ? [new StylelintPlugin({
+      files: ['**/*.css', '**/*.less', '**/*.html', '**/*.scss']
+    })
+  ]: [] ] 
 }

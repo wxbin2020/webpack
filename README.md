@@ -60,3 +60,20 @@ render((
 ## npm install url-loader file-loader -D    处理图片
  1. 处理 字体文件
  2. npm install bootstrap@4.0.0 -D
+
+ ## less 处理器
+  1. npm install less less-loader -D
+  2. 兼容旧版的css 安装 sytlelint
+  3. npm install stylelint stylelint-config-standard stylelint-webpack-plugin -D
+  4. ``
+      stylelint: [
+        new StylelintPlugin({
+          files: ['**/*.css', '**/*.less', '**/*.html', '**/*.scss']
+        })
+      ]
+     ``
+  5.   `` 在package.json 中可以不配置，如果配置 可以选择关闭 swith 开关
+        "stylelint": {
+            "extends": "stylelint-config-standard"
+          }
+  `` 
