@@ -48,3 +48,5 @@ render((
  1. config目录 webpack 打包环境配置文件
  2. plubic目录 不打包的静态资源
  3. src 下的 assets 是打包的 静态资源
+
+## npm install style-loader css-loader -D 本地安装 css-loader 处理器
