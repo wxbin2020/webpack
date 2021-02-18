@@ -77,3 +77,11 @@ render((
             "extends": "stylelint-config-standard"
           }
   `` 
+  6. 安装 npm install postcss-loader autoperfixer -D    兼容 ie 低版本 浏览器的css
+  7. package.json文件配置 
+   "browserslist": [
+    "> 0.5%",
+    "last 2 version",
+    "not dead"
+  ] 
+

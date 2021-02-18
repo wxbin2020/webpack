@@ -26,7 +26,18 @@ module.exports = {
       // css
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader']
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            // options: {
+            //   plugins: [
+            //     require('autoprefixer')
+            //   ]
+            // }
+          }
+        ]
       },
       // 图片
       {
