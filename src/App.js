@@ -1,5 +1,7 @@
 import React from 'react'
 import './App.css'
+// import './assets/css/bootstrap.css'
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 class App extends React.Component {
   constructor(props) {
@@ -13,6 +15,9 @@ class App extends React.Component {
       <div> 
         <p className="green-color">hello world 1</p>
         <p className="red-color">hello world 2</p>
+        <section className="pic-back"></section>
+        <br/>
+        <button className="btn btn-primary glyphicon glyhpicon-qrcode">按钮</button>
       </div>
     )
   }

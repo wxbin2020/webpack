@@ -50,3 +50,13 @@ render((
  3. src 下的 assets 是打包的 静态资源
 
 ## npm install style-loader css-loader -D 本地安装 css-loader 处理器
+``
+ // css
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
+      },
+  ``
+## npm install url-loader file-loader -D    处理图片
+ 1. 处理 字体文件
+ 2. npm install bootstrap@4.0.0 -D

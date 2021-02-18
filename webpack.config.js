@@ -24,6 +24,30 @@ module.exports = {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader']
       },
+      // 图片
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: {
+          loader: 'url-loader',
+          options: {
+            outputPath: 'imgs/',
+            publicPath: 'build/imgs',
+            limit: 10 * 1024            // 10kb
+          }
+        }
+      },
+      // 处理字体
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/i,
+        use: {
+          loader: 'url-loader',
+          options: {
+            outputPath: 'fonts',
+            publicPath: 'build/fonts',
+            limit: 10 * 1024   
+          }
+        }
+      }
     ]
   },
   // devtool: 'source-map'
