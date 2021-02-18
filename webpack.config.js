@@ -3,7 +3,7 @@ const path = require('path')
 // 兼容旧版的 css 不需要 可以选择关闭
 const StylelintPlugin = require('stylelint-webpack-plugin')
 const STYLELINT_SWITCH = false
-
+const ESLINT_SWITCH = true
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
@@ -16,12 +16,23 @@ module.exports = {
       // es6 jsx
       { 
         test: /\.jsx?/i,
-        use: {
+        use: [
+          {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-react']
-          }
-        }
+          },
+        },
+        ...ESLINT_SWITCH ? [{
+          loader: 'eslint-loader',
+          // options: {
+          //   outputReport: {
+          //     filePath: 'eslint_report.html',
+          //     formatter: require('eslint/lib/formatters/html')
+          //   }
+          // }
+        }] : []
+      ]
       },
       // css
       {

@@ -84,4 +84,7 @@ render((
     "last 2 version",
     "not dead"
   ] 
-
+  8. npm install eslint eslint-loader eslint-plugin-react -D  配置代码规范
+  9. 配置 eslint 选项
+    node node_modules/eslint/bin/eslint --init
+    

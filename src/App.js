@@ -10,7 +10,7 @@ class App extends React.Component {
     //  这是一行一定会出错的代码
     // (undefined).abc = 5;
   }
-
+                          
   render() {
     return (
       <div> 
